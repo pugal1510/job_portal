@@ -24,7 +24,6 @@ public class ContactController {
     public ResponseEntity<String> saveContact(@RequestBody ContactRequestDto contactRequestDto) {
         log.info("Received contact request: {}", contactRequestDto);
         boolean isaved = contactService.saveContact(contactRequestDto);
-
         if (isaved) {
             return ResponseEntity.ok("Contact saved successfully");
         } else {
